@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-recetaSchema = new Schema({
+const recetaSchema = new Schema({
   nombreReceta: {
     type: String,
     required: true,
