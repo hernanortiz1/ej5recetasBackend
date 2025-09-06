@@ -1,0 +1,27 @@
+{
+  "name": "ej5recetas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --env-file .env --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernanortiz1/ej5recetasBackend.git"
+  },
+  "keywords": [],
+  "author": "Ortiz Hernán",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hernanortiz1/ej5recetasBackend/issues"
+  },
+  "homepage": "https://github.com/hernanortiz1/ej5recetasBackend#readme",
+  "description": "Ejercicio 3 Tp Backend, paleta de colores",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "morgan": "^1.10.1"
+  }
+}
