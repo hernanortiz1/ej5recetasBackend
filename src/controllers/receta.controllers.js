@@ -15,6 +15,19 @@ export const leerReceta = async (req, res) => {
   }
 };
 
+export const leerRecetaPorId = async (req, res) => {
+  try {
+    const recetaBuscada = await Receta.findById(req.params.id);
+    if (!recetaBuscada) {
+      return res.status(404).json({ mensaje: "Receta no encontrada" });
+    }
+    res.status(200).json(recetaBuscada);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: "Error al obtener receta" });
+  }
+};
+
 export const crearReceta = async (req, res) => {
   try {
     const nuevaReceta = new Receta(req.body);
