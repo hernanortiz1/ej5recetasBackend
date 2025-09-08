@@ -39,3 +39,17 @@ export const crearReceta = async (req, res) => {
     res.status(500).json({ mensaje: "Error al crear receta" });
   }
 };
+
+export const borrarProductoPorId = async (req, res) => {
+  try {
+    const recetaEliminada = await Receta.findByIdAndDelete(req.params.id);
+    if (!recetaEliminada) {
+      return res.status(404).json({ mensaje: "Receta no encontrada" });
+    }
+
+    res.status(200).json({ mensaje: "Receta eliminada con exito" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: "Error al eliminar receta" });
+  }
+};
