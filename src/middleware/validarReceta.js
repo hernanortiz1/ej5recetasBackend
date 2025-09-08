@@ -7,17 +7,7 @@ const validacionReceta = [
     .notEmpty()
     .withMessage("El nombre de la receta es obligatorio")
     .isLength({ min: 3, max: 80 })
-    .withMessage("El nombre de la receta debe tener entre 3 y 80 caracteres")
-    .custom(async (valor, { req }) => {
-      
-      const recetaExistente = await Receta.findOne({
-        nombreReceta: valor
-      });
-      if (!recetaExistente) return true
-      if(req.params?.id && recetaExistente._id.toString() === req.params.id) return true
-
-      throw new Error("ya existe una receta con ese nombre");
-    }),
+    .withMessage("El nombre de la receta debe tener entre 3 y 80 caracteres"),
   body("imagen")
     .notEmpty()
     .withMessage("La imagen es un campo obligatorio")
