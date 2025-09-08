@@ -40,7 +40,7 @@ export const crearReceta = async (req, res) => {
   }
 };
 
-export const borrarProductoPorId = async (req, res) => {
+export const borrarRecetaPorId = async (req, res) => {
   try {
     const recetaEliminada = await Receta.findByIdAndDelete(req.params.id);
     if (!recetaEliminada) {
