@@ -56,7 +56,6 @@ export const borrarRecetaPorId = async (req, res) => {
 
 export const editarRecetaPorId = async (req, res) => {
   try {
-  
     const recetaModificada = await Receta.findByIdAndUpdate(
       req.params.id,
       req.body
@@ -64,7 +63,7 @@ export const editarRecetaPorId = async (req, res) => {
     if (!recetaModificada) {
       return res.status(404).json({ mensaje: "Receta no encontrada" });
     }
-    
+
     res.status(200).json({ mensaje: "Receta modificada con exito" });
   } catch (error) {
     console.error(error);
